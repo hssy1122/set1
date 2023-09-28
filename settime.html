@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<style>
+    body {margin: 0;}
+    run {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #image {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 999; /* 이미지가 위에 표시되도록 설정 */
+    }
+</style>
+
+<body>
+
+<video src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHB4ODMyNDZtZXY4Nm51c2xtZmdxemp0aDNtc3ViazdtNG1yYXd1biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaIWmY3Q9Zw/Ps8XflhsT5EVa/giphy.mp4" muted autoplay loop id="run"  width="1920" height="1080"></video>
+
+<img id="image" src="restart.png" style="display: none;">
+
+<script type="text/javascript">
+    var run = document.getElementById("run");
+    var image = document.getElementById("image");
+
+    // 웹사이트 접속 후 5초 후에 이미지를 표시하는 함수
+    function showImageAfterDelay() {
+        setTimeout(function() {
+            image.style.display = "block";
+        }, 5000); // 5초 (5000 밀리초)
+    }
+
+    // 이미지 표시 함수 호출
+    showImageAfterDelay();
+
+    run.addEventListener("click", function() {
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+        alert(randomNumber + "번 입니다");
+    });
+
+</script>
+
+</body>
+</html>
